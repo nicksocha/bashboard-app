@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BashBoard - Snippet Manager</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQARERFjERERvxEREb8RERFjERERABEREQARERFjERERvxEREb8RERFjAAAAAAAAAAAAAAAAERERYxEREf8RERH/ERER/xEREf8RERH/ERER/xEREf8RERH/ERER/xEREf8RERFjAAAAAAAAAAAREREAERERvxEREf8RERH/ERER/xEREf8RERH/ERER/xEREf8RERH/ERER/xEREb8REREAAAAAAAAAAAARERFjERER/xEREf8RERH/ERER/xEREf8RERH/ERER/xEREf8RERH/ERER/xEREWMAAAAAAAAAABEREQARERG/ERER/xEREf8RERH/ERER/xEREf8RERH/ERER/xEREf8RERH/ERERvxEREQAAAAAAAAAAABEREWMRERH/ERER/xEREf8RERH/ERER/xEREf8RERH/ERER/xEREf8RERH/ERERYwAAAAAAAAAAERERABEREb8RERH/ERER/xEREf8RERH/ERER/xEREf8RERH/ERER/xEREf8RERG/ERERAAAAAAAAAAAAAAAAABEREWMRERFjERERYxEREQARERG/ERER/xEREf8RERG/ERERYxEREWMRERFjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQARERG/ERER/xEREf8RERG/ERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQARERFjERERvxEREb8RERFjERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQARERFjERERvxEREb8RERFjERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQARERFjERERvxEREb8RERFjERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREQARERFjERERvxEREb8RERFjERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERABEREQARERFjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header-container">
+      <label for="file-upload" class="button" role="button" tabindex="0">
+        Open File
+        <input
+          type="file"
+          id="file-upload"
+          accept=".sh,.txt,.md,.json,.yaml,.yml,.xml,.py,.php,.rb,.pl,.java,.cpp,.c,.h,.go,.cs,.ts,.tsx,.html,.css,.js,.sql,.bat,.cmd,.ps1"
+        />
+      </label>
+
+      <h1>BashBoard</h1>
+
+      <div class="header-buttons">
+        <button
+          onclick="window.bashBoard.clearStorage()"
+          aria-label="Clear all files"
+        >
+          Clear Files
+        </button>
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-toggle" />
+            <div class="slider round">
+              <span class="sun">☀️</span>
+              <span class="moon">🌙</span>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-bar" role="tablist" class="tab-bar"></div>
+    <div id="tab-content-container" role="tabpanel"></div>
+
+    <div id="notification" role="alert" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
